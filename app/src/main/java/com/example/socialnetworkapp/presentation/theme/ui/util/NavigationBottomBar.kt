@@ -12,26 +12,26 @@ import com.example.socialnetworkapp.presentation.theme.ui.activity.ActivityScree
 
 @Composable
 fun NavigationBottomBar(){
-    val navController = rememberNavController()
+    val navControllerTwo = rememberNavController()
     NavHost(
-        navController = navController,
+        navController = navControllerTwo,
         startDestination = Screen.SplashScreen.route
     ){
 
         composable(Screen.MainFeedScreen.route) {
-            MainFeedScreen(navController = navController)
+            MainFeedScreen(navController = navControllerTwo)
         }
         composable(Screen.ChatScreen.route) {
-            ChatScreen(navController = navController)
+            ChatScreen(navController = navControllerTwo)
         }
         composable(Screen.ProfileScreen.route) {
-            ProfileScreen(navController = navController)
+            ProfileScreen(navController = navControllerTwo)
         }
         composable(Screen.ActivityScreen.route) {
-            ActivityScreen(navController = navController)
+            ActivityScreen(navController = navControllerTwo)
         }
         composable(Screen.EditProfileScreen.route){
-            EditProfileScreen(navController = navController)
+            EditProfileScreen(navController = navControllerTwo)
         }
 
     }

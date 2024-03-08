@@ -12,6 +12,7 @@ import com.example.socialnetworkapp.presentation.theme.ui.chat.ChatScreen
 import com.example.socialnetworkapp.presentation.theme.ui.components.BottomBar
 import com.example.socialnetworkapp.presentation.theme.ui.editprofile.EditProfileScreen
 import com.example.socialnetworkapp.presentation.theme.ui.profile.ProfileScreen
+import com.example.socialnetworkapp.presentation.theme.ui.util.NavigationBottomBar
 import com.example.socialnetworkapp.presentation.theme.ui.util.Screen
 
 
@@ -25,29 +26,7 @@ fun MainFeedScreen(
         BottomBar(navController = navController, modifier = Modifier)
     },
         ){
-        NavHost(
-            navController = navController,
-            startDestination = Screen.SplashScreen.route
-        ){
-
-            composable(Screen.MainFeedScreen.route) {
-                MainFeedScreen(navController = navController)
-            }
-            composable(Screen.ChatScreen.route) {
-                ChatScreen(navController = navController)
-            }
-            composable(Screen.ProfileScreen.route) {
-                ProfileScreen(navController = navController)
-            }
-            composable(Screen.ActivityScreen.route) {
-                ActivityScreen(navController = navController)
-            }
-            composable(Screen.EditProfileScreen.route){
-                EditProfileScreen(navController = navController)
-            }
-
-        }
-
+        NavigationBottomBar()
     }
 
     

@@ -6,29 +6,17 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.socialnetworkapp.presentation.theme.ui.chat.ChatScreen
 import com.example.socialnetworkapp.presentation.theme.ui.main_feed.MainFeedScreen
-import com.example.socialnetworkapp.presentation.theme.ui.login.LoginScreen
 import com.example.socialnetworkapp.presentation.theme.ui.profile.ProfileScreen
-import com.example.socialnetworkapp.presentation.theme.ui.register.RegisterScreen
-import com.example.socialnetworkapp.presentation.theme.ui.splash.SplashScreen
+import com.example.socialnetworkapp.presentation.theme.ui.editprofile.EditProfileScreen
+import com.example.socialnetworkapp.presentation.theme.ui.activity.ActivityScreen
 
 @Composable
-fun Navigation(){
+fun NavigationBottomBar(){
     val navController = rememberNavController()
     NavHost(
         navController = navController,
         startDestination = Screen.SplashScreen.route
     ){
-        composable(Screen.SplashScreen.route){
-            SplashScreen(navController = navController)
-        }
-        
-        composable(Screen.LoginScreen.route){
-            LoginScreen(navController = navController)
-        }
-        
-        composable(Screen.RegisterScreen.route){
-            RegisterScreen(navController = navController)
-        }
 
         composable(Screen.MainFeedScreen.route) {
             MainFeedScreen(navController = navController)
@@ -39,7 +27,12 @@ fun Navigation(){
         composable(Screen.ProfileScreen.route) {
             ProfileScreen(navController = navController)
         }
+        composable(Screen.ActivityScreen.route) {
+            ActivityScreen(navController = navController)
+        }
+        composable(Screen.EditProfileScreen.route){
+            EditProfileScreen(navController = navController)
+        }
 
     }
-
 }

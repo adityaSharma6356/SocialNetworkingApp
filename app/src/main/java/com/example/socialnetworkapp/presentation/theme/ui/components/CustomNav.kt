@@ -14,6 +14,8 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -30,8 +32,12 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.socialnetworkapp.presentation.theme.ui.util.Screen
 
+
+
+
 @Composable
 fun BottomBar(navController: NavHostController, modifier: Modifier){
+
     val screens = listOf(
         Screen.MainFeedScreen,
         Screen.ChatScreen,
@@ -103,8 +109,6 @@ fun AddItem(
                 contentDescription = "icon",
                 tint = contentColor
             )
-
-
         }
     }
 

@@ -5,8 +5,14 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import com.example.socialnetworkapp.presentation.theme.ui.activity.ActivityScreen
+import com.example.socialnetworkapp.presentation.theme.ui.chat.ChatScreen
 import com.example.socialnetworkapp.presentation.theme.ui.components.BottomBar
-
+import com.example.socialnetworkapp.presentation.theme.ui.editprofile.EditProfileScreen
+import com.example.socialnetworkapp.presentation.theme.ui.profile.ProfileScreen
+import com.example.socialnetworkapp.presentation.theme.ui.util.Screen
 
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -14,9 +20,34 @@ import com.example.socialnetworkapp.presentation.theme.ui.components.BottomBar
 fun MainFeedScreen(
     navController: NavHostController
 ){
-    Scaffold (bottomBar = {
+    Scaffold (
+        bottomBar = {
         BottomBar(navController = navController, modifier = Modifier)
-    }){
+    },
+        ){
+        NavHost(
+            navController = navController,
+            startDestination = Screen.SplashScreen.route
+        ){
+
+            composable(Screen.MainFeedScreen.route) {
+                MainFeedScreen(navController = navController)
+            }
+            composable(Screen.ChatScreen.route) {
+                ChatScreen(navController = navController)
+            }
+            composable(Screen.ProfileScreen.route) {
+                ProfileScreen(navController = navController)
+            }
+            composable(Screen.ActivityScreen.route) {
+                ActivityScreen(navController = navController)
+            }
+            composable(Screen.EditProfileScreen.route){
+                EditProfileScreen(navController = navController)
+            }
+
+        }
+
     }
 
     

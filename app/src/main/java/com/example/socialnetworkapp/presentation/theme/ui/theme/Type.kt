@@ -22,9 +22,7 @@ val Typography = Typography(
         fontFamily = quicksand,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
-        lineHeight = 24.sp,
-        color = TextGray,
-        letterSpacing = 0.5.sp
+        color = TextWhite,
     ),
     headlineLarge = TextStyle(
       fontFamily = quicksand,
@@ -41,7 +39,7 @@ val Typography = Typography(
     bodyMedium = TextStyle(
         fontFamily = quicksand,
         fontWeight = FontWeight.Normal,
-        color = TextGray,
+        color = TextWhite,
         fontSize = 12.sp
     )
 

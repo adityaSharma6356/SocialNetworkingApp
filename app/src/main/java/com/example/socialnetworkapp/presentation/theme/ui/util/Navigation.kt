@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.socialnetworkapp.presentation.theme.ui.editprofile.EditProfileScreen
 import com.example.socialnetworkapp.presentation.theme.ui.home.HomeNavHost
 import com.example.socialnetworkapp.presentation.theme.ui.login.LoginScreen
 import com.example.socialnetworkapp.presentation.theme.ui.register.RegisterScreen
@@ -31,6 +32,9 @@ fun Navigation(){
 
         composable(Screen.HomeScreen.route){
             HomeNavHost(navController = navController)
+        }
+        composable(Screen.EditProfileScreen.route){
+            EditProfileScreen(navController = navController)
         }
 
     }

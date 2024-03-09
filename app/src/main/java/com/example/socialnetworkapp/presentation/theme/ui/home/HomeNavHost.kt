@@ -19,7 +19,7 @@ fun HomeNavHost(
     val navControllerTwo = rememberNavController()
     Scaffold (
         bottomBar = {
-        BottomBar(navController = navControllerTwo, modifier = Modifier)
+        BottomBar(navController = navControllerTwo, modifier = Modifier, mainNavController = navController)
     },
         ){
         NavigationBottomBar(navControllerTwo)

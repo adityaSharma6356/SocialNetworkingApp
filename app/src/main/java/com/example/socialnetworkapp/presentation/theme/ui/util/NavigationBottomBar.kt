@@ -30,9 +30,7 @@ fun NavigationBottomBar(navControllerTwo: NavHostController) {
         composable(Screen.ActivityScreen.route) {
             ActivityScreen(navController = navControllerTwo)
         }
-        composable(Screen.EditProfileScreen.route){
-            EditProfileScreen(navController = navControllerTwo)
-        }
+
 
     }
 }

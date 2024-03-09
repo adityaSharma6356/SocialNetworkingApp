@@ -8,14 +8,11 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.NavigationBar
-import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -36,7 +33,11 @@ import com.example.socialnetworkapp.presentation.theme.ui.util.Screen
 
 
 @Composable
-fun BottomBar(navController: NavHostController, modifier: Modifier){
+fun BottomBar(
+    navController: NavHostController,
+    modifier: Modifier,
+    mainNavController: NavHostController
+){
 
     val screens = listOf(
         Screen.MainFeedScreen,
@@ -62,7 +63,7 @@ fun BottomBar(navController: NavHostController, modifier: Modifier){
         screens.forEach { screen ->
             AddItem(screen = screen,
                 currentDestination = currentDestination,
-                navController = navController
+                navController = if(screen==Screen.EditProfileScreen) mainNavController else navController
             )
         }
 
@@ -92,7 +93,6 @@ fun AddItem(
                 indication = null,
                 onClick = {
                     navController.navigate(screen.route) {
-                        popUpTo(navController.graph.findStartDestination().id)
                         launchSingleTop = true
                     }
                 })

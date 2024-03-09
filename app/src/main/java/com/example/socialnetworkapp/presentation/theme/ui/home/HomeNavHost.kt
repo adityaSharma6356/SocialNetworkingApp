@@ -1,6 +1,7 @@
 package com.example.socialnetworkapp.presentation.theme.ui.home
 
 import android.annotation.SuppressLint
+import android.text.BoringLayout
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -13,7 +14,8 @@ import com.example.socialnetworkapp.presentation.theme.ui.util.NavigationBottomB
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun HomeNavHost(
-    navController: NavHostController
+    navController: NavHostController,
+    showBottomBar : Boolean = true
 ){
 
     val navControllerTwo = rememberNavController()
@@ -25,6 +27,6 @@ fun HomeNavHost(
         NavigationBottomBar(navControllerTwo)
     }
 
-    
+
 }
 

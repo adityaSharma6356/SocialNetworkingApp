@@ -18,15 +18,5 @@ fun HomeNavHost(
     showBottomBar : Boolean = true
 ){
 
-    val navControllerTwo = rememberNavController()
-    Scaffold (
-        bottomBar = {
-        BottomBar(navController = navControllerTwo, modifier = Modifier, mainNavController = navController)
-    },
-        ){
-        NavigationBottomBar(navControllerTwo)
-    }
-
-
 }
 

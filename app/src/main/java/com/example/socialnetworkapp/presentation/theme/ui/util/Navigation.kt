@@ -4,10 +4,12 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.socialnetworkapp.presentation.theme.ui.components.StandardScaffold
 import com.example.socialnetworkapp.presentation.theme.ui.editprofile.EditProfileScreen
-import com.example.socialnetworkapp.presentation.theme.ui.home.HomeNavHost
 import com.example.socialnetworkapp.presentation.theme.ui.login.LoginScreen
+import com.example.socialnetworkapp.presentation.theme.ui.main_feed.MainFeedScreen
 import com.example.socialnetworkapp.presentation.theme.ui.register.RegisterScreen
+import com.example.socialnetworkapp.presentation.theme.ui.search.SearchScreen
 import com.example.socialnetworkapp.presentation.theme.ui.splash.SplashScreen
 
 @Composable
@@ -31,13 +33,15 @@ fun Navigation(){
         }
 
         composable(Screen.HomeScreen.route){
-            HomeNavHost(navController = navController)
+            StandardScaffold(navController = navController)
         }
 
         composable(Screen.EditProfileScreen.route){
             EditProfileScreen(navController = navController)
         }
-
+        composable(Screen.SearchScreen.route){
+            SearchScreen(navController = navController)
+        }
 
 
     }

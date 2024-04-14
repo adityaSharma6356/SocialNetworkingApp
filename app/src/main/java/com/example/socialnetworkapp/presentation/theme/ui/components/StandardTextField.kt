@@ -24,10 +24,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.testTag
 import androidx.compose.ui.semantics.testTagsAsResourceId
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
@@ -42,15 +44,18 @@ fun StandardTextField(
     hint: String = "",
     maxLength: Int = 40,
     error :String = "",
+    style: TextStyle = TextStyle(
+        color = MaterialTheme.colorScheme.onBackground
+    ),
+    singleLine: Boolean = true,
+    maxLines: Int = 1,
+    leadingIcon: ImageVector? = null,
     keyboardType:KeyboardType = KeyboardType.Text,
+    isPasswordToggleDisplayed : Boolean = keyboardType == KeyboardType.Password,
     showPasswordToggle: Boolean = false,
     onPasswordToggleClick : (Boolean) -> Unit = {},
     onValueChange: (String) -> Unit
 ){
-    val isPasswordToggleDisplayed by remember{
-        mutableStateOf(keyboardType == KeyboardType.Password)
-    }
-
 
     Column (
         modifier = Modifier

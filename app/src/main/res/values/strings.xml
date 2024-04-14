@@ -18,5 +18,10 @@
     <string name="share">Share</string>
     <string name="read_more">Read more</string>
     <string name="liked_by_x_people">Liked By %d people</string>
-    <string name="x_comments">%d comments\n</string>
+    <string name="x_comments">%d comments</string>
+    <string name="back">Back\n</string>
+    <string name="your_feed">Your Feed</string>
+    <string name="your_activity">Your Activity</string>
+    <string name="search_for_users">Search For Users\n</string>
+    <string name="search">Search\n</string>
 </resources>
